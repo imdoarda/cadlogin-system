@@ -8,14 +8,18 @@
 <body>
     <main>
         <form action="">
+            <!--cria duas seções diferentes-->
             <section>
                 <label for="">Email</label>
                 <input type="email" name="email" placeholder="email" required>
             </section>
             <section>
-
+                <label for="">Senha</label>
+                <input type="password" name="senha" placeholder="Senha" required>
             </section>
+            <button type="submit">Login</button>
         </form>
+        <a href="">Cadastre-se</a>
     </main>
 </body>
 </html>
