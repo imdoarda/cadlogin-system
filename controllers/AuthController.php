@@ -20,9 +20,14 @@ class AuthController
                 session_start(); //armazena na sessão o ID do usuário que está logado e seu perfil
                 $SESSION['usuario_id'] = $user ['id'];
                 $_SESSION['perfil'] = $user['perfil'];
-                header('');
 
+                header('Location: index.php?action=dashboard');
+
+            }else{
+                echo "Email ou senha incorretos";
             }
+        }else{
+            include 'views/login.php';
         }
     }
 }
