@@ -15,10 +15,69 @@ Este é um sistema básico de autenticação de usuários, desenvolvido em PHP, 
 ## Funcionalidades
 
 * Cadastro de usuários com diferentes perfis (Admin, Gestor, Colaborador).
-  ![image](https://github.com/user-attachments/assets/75746251-e3f2-4229-a1b1-988a8b0908dc)
 
-* Login e Logout com validação de credenciais.
-  ![image](https://github.com/user-attachments/assets/2e7a9128-06de-4c9a-bd09-50bd0472c190)
+        <!DOCTYPE html>
+      <html lang="pt-br">
+      <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+      <title>Cadastre-se</Cadastre-se></title>
+      </head>
+      <body>
+        <div>
+            <h2>Cadastro de Usuário</h2>
+            <form action="index.php?action=register" method="post">
+            <label for="">Nome</label>
+            <input type="text" name="nome" id="nome" required>
+
+            <label for="">Email</label>
+            <input type="email" name="email" id="email" required>
+
+            <label for="">Senha</label>
+            <input type="password" name="senha" id="senha" required>
+
+            <label for="">Perfil:</label>
+            <select name="perfil" id="perfil">
+                <option value="admin">Admin</option>
+                <option value="gestor">Gestor</option>
+                <option value="colaborador">Colaborador</option>
+            </select>
+            <button type="submit">Cadastrar</button>
+          </form>
+            <a href="index.php?action=login">Voltar ao Login</a>
+        </div>
+        </body>
+        </html>
+
+* Login validação de credenciais.
+
+        <!DOCTYPE html>
+      <html lang="pt-br">
+      <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+        <title>Login</title>
+      </head>
+      <body>
+      <main>
+        <form action="index.php?action=login" method="post">
+            <!--cria duas seções diferentes-->
+            <section>
+                <label for="">Email</label>
+                <input type="email" name="email" placeholder="email" required>
+            </section>
+            <section>
+                <label for="">Senha</label>
+                <input type="password" name="senha" placeholder="Senha" required>
+            </section>
+            <button type="submit">Login</button>
+        </form>
+        <a href="index.php?action=register">Cadastre-se</a>
+        </main>
+      </body>
+      </html>
 
 * Gestão de sessão para controle de acesso.
   
@@ -87,9 +146,12 @@ Este é um sistema básico de autenticação de usuários, desenvolvido em PHP, 
           break;
           }
 * Servidor Apache com suporte a PHP.
+  
  ![image](https://github.com/user-attachments/assets/d12d6ef5-f00a-461f-8494-30f0244e947c)
 
 * Banco de dados MySQL.
+
+
    ``Tabelas codificadas no banco de dados:``
   
         CREATE DATABASE sistema_usuarios;
@@ -126,26 +188,30 @@ Este é um sistema básico de autenticação de usuários, desenvolvido em PHP, 
   
 ## Passo a passo para uso
 
-``I- ``Para registrar um novo usuário, acesse a página de cadastro e preencha os campos.
+``I- ``Para registrar um novo usuário, acesse a página de cadastro e preencha os campos.  
 ``II- ``Após o cadastro, faça login com suas credenciais.  
 ``III- ``Dependendo do perfil de usuário (admin, gestor, colaborador), você terá acesso a diferentes funcionalidades no painel.
 
 # TELAS:
 
-##  ``TELA DE LOGIN:``
+##  ``TELA DE LOGIN:``  
+
 ![Captura de tela 2024-09-30 113820](https://github.com/user-attachments/assets/681d6167-c185-4198-a93b-2c833816d2fe)
 
 
 
-##  ``TELA DE CADASTRO:``
+##  ``TELA DE CADASTRO:``  
+
 ![Captura de tela 2024-09-30 113839](https://github.com/user-attachments/assets/126364ce-1898-485d-93d7-7aeac46ab1af)
 
 
 ### ``OPÇÕES DE USUÁRIOS:``  
+
 ![image](https://github.com/user-attachments/assets/96c25e9b-54fb-484e-8a99-8d3e421ec3d4)
 
 
 
 ## Autores
 
-[<img loading="lazy" src="https://avatars.githubusercontent.com/u/127868962?v=4" width=115><br><sub>Maria Eduarda Mendes</sub>](https://github.com/imdoarda) - Essa documentação foi feita com o intuito de ajudar a entender o propósito do projeto, como instalá-lo, usar e contribuir.
+[<img loading="lazy" src="https://avatars.githubusercontent.com/u/127868962?v=4" width=115><br><sub>Maria Eduarda Mendes</sub>](https://github.com/imdoarda)   
+Essa documentação foi feita com o intuito de ajudar a entender o propósito do projeto, como instalá-lo, usar e contribuir.
