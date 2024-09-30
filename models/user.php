@@ -32,7 +32,6 @@
         public static function create($data){
             $conn = Database::getConnection();
             $stmt = $conn->prepare("INSERT INTO usuarios (nome, email, senha, perfil) VALUES (:nome, :email, :senha, :perfil)");
-
             $stmt->execute($data);
         }
     }
