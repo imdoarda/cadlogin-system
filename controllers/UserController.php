@@ -20,6 +20,11 @@ class UserController{
         }
         
     }
+     // Função para listar todos os usuários
+     public function list() {
+        $users = User::all();
+        include "views/list_users.php";
+    }
 }
 
 ?>

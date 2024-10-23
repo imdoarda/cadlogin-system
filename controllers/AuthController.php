@@ -30,5 +30,16 @@ class AuthController
             include 'views/login.php';
         }
     }
+     // Função responsável por fazer o logout (encerrar a sessão do usuário)
+     public function logout() {
+        // Iniciar a sessão para destruí-la
+        session_start();
+
+        // Destrói todas as informações da sessão
+        session_destroy();
+
+        // Redireciona o usuário para a página incial
+        header("Location: index.php");
+    }
 }
 ?>
