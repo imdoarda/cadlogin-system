@@ -42,6 +42,17 @@
 
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    public static function update($id, $data){
+        $conn = Database::getConnection();
+        //Prepara a consulta SQL para atualização dos dados do usuário
+        $stmt = $conn->prepare("UPDATE usuarios SET nome = :nome, email = :email, perfil = :perfil WHERE id = :id");
+
+        //set = define valores 
+        
+        $data['id'] = $id;
+        $stmt->execute($data);
     }
+}
+
 
 ?>
