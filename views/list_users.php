@@ -35,11 +35,13 @@ if (isset($_SESSION["perfil"])):
                     <td><?= $user["perfil"] ?></td>
                     <td>
                         <?php if ($_SESSION["perfil"] == "admin" || $_SESSION["perfil"] == "gestor"): ?>
-                            <a href="">Editar</a>
+                            <a href="index.php?action=edit?id=<?= $user['id'] ?>">Editar</a>
                         <?php endif; ?>
                         <?php if ($_SESSION["perfil"] == "admin"): ?>
                             <a href="">Excluir</a>
-                        <?php endif; ?>
+                        <?php endif; 
+                        
+                        ?>
                     </td>
                 </tr>
                 <?php endforeach; ?>
