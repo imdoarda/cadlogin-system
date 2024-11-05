@@ -1,0 +1,81 @@
+/* css/style.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+}
+
+/* Estilos para cada perfil */
+body.admin .container {
+    border-top: 4px solid #d9534f; /* Vermelho para admin */
+}
+body.gestor .container {
+    border-top: 4px solid #f0ad4e; /* Laranja para gestor */
+}
+body.colaborador .container {
+    border-top: 4px solid #5bc0de; /* Azul para colaborador */
+}
+
+h1 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333333;
+}
+
+p {
+    font-size: 1rem;
+    color: #666666;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    color: #ffffff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+/* Diferentes cores para cada perfil */
+body.admin .btn {
+    background-color: #d9534f;
+}
+body.gestor .btn {
+    background-color: #f0ad4e;
+}
+body.colaborador .btn {
+    background-color: #5bc0de;
+}
+
+.btn:hover {
+    filter: brightness(0.9);
+}
