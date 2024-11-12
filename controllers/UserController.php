@@ -32,7 +32,8 @@ class UserController{
         if($_SESSION['perfil'] == 'admin' || $_SESSION['perfil'] == 'gestor'){
 
             $user = User::find($id);
-            if($_SERVER['REQUEST METHOD'] ==   'POST'){
+
+            if($_SERVER['REQUEST METHOD'] == 'POST'){
                 $data = [
                     'nome' => $_POST['nome'],
                     'email' => $_POST['email'],
@@ -40,6 +41,7 @@ class UserController{
                 ];
 
                 User::update($id, $data);
+                
                 header('Location: index.php?action=list');
             } else{
                 include 'views/edit_user.php';
