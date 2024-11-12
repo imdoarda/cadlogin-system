@@ -13,7 +13,7 @@
 <h2>Editar Usuário</h2>
 <form method="post" action="index.php?action=edit&id=<?= $user["id"] ?>" class="edit-form">
 <label for="nome">Nome:</label>
-<input type="text" name="nome" id="nome" value="index.php?action=edit&id=<?= $user["id"] ?>" required>
+<input type="text" name="nome" id="nome" value="<?= $user["nome"] ?>" required>
  
             <label for="email">Email:</label>
 <input type="email" name="email" id="email" value="<?= $user["email"] ?>" required>
