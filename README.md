@@ -167,7 +167,7 @@ Este é um sistema básico de autenticação de usuários, desenvolvido em PHP, 
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         ');
 
-  * Função usada para editar usuários:
+* Função usada para editar usuários:
  
          public static function update($id, $data){
          $conn = Database::getConnection();
@@ -183,7 +183,7 @@ Este é um sistema básico de autenticação de usuários, desenvolvido em PHP, 
 ![editar](https://github.com/user-attachments/assets/961610aa-ca3d-4404-a2ae-5548ab2b02c0)
 
 
-    * Função usada para excluir usuários:
+* Função usada para excluir usuários:
    
            // Função para exclusão de usuário pelo ID
            public static function delete($id) {
