@@ -167,6 +167,33 @@ Este é um sistema básico de autenticação de usuários, desenvolvido em PHP, 
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         ');
 
+  * Função usada para editar usuários:
+ 
+         public static function update($id, $data){
+         $conn = Database::getConnection();
+         //Prepara a consulta SQL para atualização dos dados do usuário
+         $stmt = $conn->prepare("UPDATE usuarios SET nome = :nome, email = :email, perfil = :perfil WHERE id = :id");
+
+         //set = define valores 
+        
+         $data['id'] = $id;
+         $stmt->execute($data);
+        }
+
+![editar](https://github.com/user-attachments/assets/961610aa-ca3d-4404-a2ae-5548ab2b02c0)
+
+
+    * Função usada para excluir usuários:
+   
+           // Função para exclusão de usuário pelo ID
+           public static function delete($id) {
+          $conn = Database::getConnection();
+          $stmt = $conn->prepare("DELETE FROM usuarios WHERE id = :id");
+          $stmt->execute(["id" => $id]);
+          }
+
+![excluir](https://github.com/user-attachments/assets/f64ef388-592a-47d6-bbec-6aea1ade6d13)
+
 ## Tecnologias Utilizadas
 
 * 	``MySQL 5.2.0``
@@ -191,23 +218,58 @@ Este é um sistema básico de autenticação de usuários, desenvolvido em PHP, 
 ``I- ``Para registrar um novo usuário, acesse a página de cadastro e preencha os campos.  
 ``II- ``Após o cadastro, faça login com suas credenciais.  
 ``III- ``Dependendo do perfil de usuário (admin, gestor, colaborador), você terá acesso a diferentes funcionalidades no painel.
+        * admin - o administrador é capaz de excluir e editar usuários;
+        * gestor - o gestor é capaz de editar usuários;
+        * colaborador - o colaborador não realiza nenhuma das atividades que os outros dois usuários são capazes de fazer.
 
 # TELAS:
 
 ##  ``TELA DE LOGIN:``  
 
-![Captura de tela 2024-09-30 113820](https://github.com/user-attachments/assets/681d6167-c185-4198-a93b-2c833816d2fe)
+![Captura de tela 2024-11-17 212057](https://github.com/user-attachments/assets/435ccbaf-14ba-4411-8580-1cbc7ba31d28)
 
 
 
 ##  ``TELA DE CADASTRO:``  
 
-![Captura de tela 2024-09-30 113839](https://github.com/user-attachments/assets/126364ce-1898-485d-93d7-7aeac46ab1af)
+![Captura de tela 2024-11-17 212625](https://github.com/user-attachments/assets/e94fbb1d-4a67-4b13-961c-f06ad7c3d31d)
+
 
 
 ### ``OPÇÕES DE USUÁRIOS:``  
 
-![image](https://github.com/user-attachments/assets/96c25e9b-54fb-484e-8a99-8d3e421ec3d4)
+![Captura de tela 2024-11-17 212635](https://github.com/user-attachments/assets/a869c16f-65fe-41d9-ba63-f855fe402603)
+
+
+
+
+## ``TELA DO ADMINISTRADOR APÓS LOGIN``
+
+![Captura de tela 2024-11-17 212757](https://github.com/user-attachments/assets/20a83a12-b6d9-4185-8f73-0181c8b541b3)
+
+
+
+### ``LISTAGEM DE USUÁRIOS PARA ADMINISTRADOR``
+
+![Captura de tela 2024-11-17 212817](https://github.com/user-attachments/assets/055ae892-c304-4605-b246-60be359cd003)
+
+
+
+## ``TELA DO GESTOR APÓS LOGIN``
+
+![Captura de tela 2024-11-17 212852](https://github.com/user-attachments/assets/b7af1153-9695-4a32-a128-1643625d3006)
+
+
+
+### ``LISTAGEM DE USUÁRIOS PARA GESTOR``
+
+![Captura de tela 2024-11-17 212909](https://github.com/user-attachments/assets/042b8db0-db18-4744-b2b3-fbe0310d026f)
+
+
+
+## ``TELA DO USUÁRIO APÓS LOGIN``
+
+![Captura de tela 2024-11-17 212940](https://github.com/user-attachments/assets/74a9b3e2-861e-43ac-9219-55b3a05e6cf8)
 
 
 
